@@ -38,7 +38,7 @@ node.set['tomcat']['tmp_dir'] = '/tmp/tomcat7-tmp'
 node.set['tomcat']['work_dir'] = '/var/cache/tomcat7'
 node.set['tomcat']['webapp_dir'] = '/var/lib/tomcat7/webapps'
 node.set['tomcat']['keytool'] = '/usr/bin/keytool'
-node.set['tomcat']['java_options'] = '-XX:MaxPermSize=512m -Xms1G -Xmx1G -XX:-DisableExplicitGC -Djava.awt.headless=true -Dalfresco.home=/opt/alfresco -Dcom.sun.management.jmxremote -Dsun.security.ssl.allowUnsafeRenegotiation=true'
+node.set['tomcat']['java_options'] = '-Djava.awt.headless=true -Xms2G -Xmx2G -XX:+UseConcMarkSweepGC -XX:MaxPermSize=512m'
 include_recipe 'tomcat::default'
 
 service 'tomcat7' do
